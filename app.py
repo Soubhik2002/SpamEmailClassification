@@ -39,9 +39,11 @@ def transform_text(text):
 tfidf = pickle.load(open('./Model/vectorizer.pkl', 'rb'))
 model = pickle.load(open('./Model/SpamEmailModel.pkl', 'rb'))
 
-
+img1 = Image.open('celebal.jpeg')
+img1 = img1.resize((156, 145))
 st.title("Email Spam Classifier")
 input_sms = st.text_area("Enter the message")
+
 
 if st.button('Predict'):
 
